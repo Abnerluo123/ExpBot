@@ -1,0 +1,2 @@
+# Lightweight local application: Python standard library + Pillow only.
+Pillow>=10.4,<13

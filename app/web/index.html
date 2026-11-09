@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="app-token" content="__APP_TOKEN__">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f4f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
+  <title>ExpBot</title>
+  <link rel="icon" href="/icon.ico?v=1.0.0" sizes="any">
+  <link rel="icon" href="/icon-32.png?v=1.0.0" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/icon-192.png?v=1.0.0">
+  <link rel="stylesheet" href="/wizard.css">
+  <script src="/wizard.js" defer></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="w-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="w-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="w-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="w-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="w-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="w-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="w-settings" viewBox="0 0 24 24"><path d="M4 3v7m0 4v7M12 3v12m0 4v2M20 3v3m0 4v11M1 10h6m2 9h6m2-13h6"/></symbol>
+    <symbol id="w-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2.5 7M3 5v6h6m3-5v6l4 2"/></symbol>
+    <symbol id="w-folder" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="w-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+    <symbol id="w-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+    <symbol id="w-warning" viewBox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v1"/></symbol>
+    <symbol id="w-refresh" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 8M3 4v6h6"/></symbol>
+    <symbol id="w-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="w-back" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+    <symbol id="w-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="w-spark" viewBox="0 0 24 24"><path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8zM21 2v4m-2-2h4"/></symbol>
+    <symbol id="w-zoom" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></symbol>
+    <symbol id="w-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="w-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="w-list" viewBox="0 0 24 24"><path d="M9 5h12M9 12h12M9 19h12M3 5h1M3 12h1M3 19h1"/></symbol>
+    <symbol id="w-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></symbol>
+    <symbol id="w-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="w-fit" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <div id="batchIdentity" class="batch-full-name" hidden></div>
+      <div class="header-actions"><span class="local-tag"><i></i> 本地工作空间</span><button class="button quiet small" type="button" data-action="settings"><svg aria-hidden="true"><use href="#w-settings"/></svg><span>设置</span></button></div>
+    </header>
+    <main id="main" tabindex="-1"><div class="initial-loading" role="status"><span class="spinner"></span><p>正在打开你的工作空间…</p></div></main>
+    <footer class="site-footer"><span><svg aria-hidden="true"><use href="#w-lock"/></svg>材料保存在本机</span><span>仅在你点击整理或制作时，发送至已配置的模型服务。</span></footer>
+  </div>
+  <input id="materialPicker" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,.png,.jpg,.jpeg,.webp,.bmp,.tif,.tiff,.pdf" multiple hidden>
+  <div id="toastStack" class="toast-stack" aria-live="polite" aria-relevant="additions text"></div>
+  <dialog id="settingsDialog" class="dialog settings-dialog" aria-labelledby="settingsTitle">
+    <div class="dialog-header"><div><span class="eyebrow">只需设置一次</span><h2 id="settingsTitle">准备好，就可以开始</h2></div><button class="icon-button" type="button" data-close="settingsDialog" aria-label="关闭设置"><svg aria-hidden="true"><use href="#w-close"/></svg></button></div>
+    <p id="settingsIntro" class="muted">资料和密钥保存在本机。已有密钥不会回显。</p>
+    <form id="settingsForm">
+      <fieldset><legend>你的信息</legend><div class="form-grid">
+        <label class="field" for="settingName">姓名 <span class="required">*</span><input id="settingName" name="name" autocomplete="name" maxlength="30" required></label>
+        <label class="field" for="settingAdvisor">导师 / 指导人 <span class="required">*</span><input id="settingAdvisor" name="advisor" maxlength="30" required></label>
+        <label class="field full-span" for="settingProject">项目名称 <span class="required">*</span><input id="settingProject" name="project_name" maxlength="100" required></label>
+        <label class="field full-span" for="settingOutput">输出文件夹 <span class="required">*</span><input id="settingOutput" name="output_dir" spellcheck="false" placeholder="本机文件夹路径" required><small>每笔采购独立文件夹，内含电子发票与购买及支付凭证两份 PDF。</small></label>
+      </div></fieldset>
+      <fieldset><legend>购买方与收货信息</legend><div class="form-grid">
+        <label class="field" for="settingBuyer">发票抬头 / 购买方名称 <span class="required">*</span><input id="settingBuyer" name="buyer_name" maxlength="120" required placeholder="与电子发票购买方一致"></label>
+        <label class="field" for="settingTaxId">纳税人识别号 <span class="required">*</span><input id="settingTaxId" name="taxpayer_id" maxlength="40" required spellcheck="false" placeholder="统一社会信用代码 / 税号"></label>
+        <label class="field full-span" for="settingRequiredAddress">统一收货地址 <span class="required">*</span><input id="settingRequiredAddress" name="required_address" maxlength="200" required placeholder="订单应使用的收货地址"><small>整理时会与订单收货地址语义核对。</small></label>
+        <label class="field full-span" for="settingAddressKeywords">地址核对关键词（可选）<input id="settingAddressKeywords" name="address_keywords" maxlength="200" placeholder="多个关键词用逗号分隔，例如：园区名, 楼号, 房间号"><small>都出现在地址里才视为匹配；留空则按完整收货地址判断。</small></label>
+        <label class="field full-span" for="settingOrgAddress">购买方地址（发票信息，可选）<input id="settingOrgAddress" name="org_address" maxlength="200" placeholder="开票信息中的单位地址"></label>
+        <label class="field" for="settingOrgPhone">单位电话（可选）<input id="settingOrgPhone" name="org_phone" maxlength="40" placeholder="开票电话"></label>
+        <label class="field" for="settingBankName">开户行（可选）<input id="settingBankName" name="bank_name" maxlength="120" placeholder="开户银行名称"></label>
+        <label class="field full-span" for="settingBankAccount">银行账号（可选）<input id="settingBankAccount" name="bank_account" maxlength="60" spellcheck="false" placeholder="开户账号"></label>
+      </div></fieldset>
+      <fieldset><legend>模型服务</legend><div class="form-grid">
+        <label class="field full-span" for="settingApiBase">API 地址 <span class="required">*</span><input id="settingApiBase" name="ai_api_base" type="url" spellcheck="false" placeholder="https://api.deepseek.com" required><small>填写服务商的 OpenAI 兼容接口地址。</small></label>
+        <label class="field full-span" for="settingModel">模型 ID <span class="required">*</span><input id="settingModel" name="ai_vision_model" spellcheck="false" placeholder="deepseek-flash" required><small>DeepSeek V4.1 · deepseek-flash，可按服务商修改。以服务商模型 ID 为准，必须支持图像。</small></label>
+        <label class="field full-span" for="settingKey">API Key<input id="settingKey" name="ai_api_key" type="password" autocomplete="off" spellcheck="false" placeholder="填写 API Key"><small id="keyHelp">密钥不会回显，也不会加入导出文件。</small></label>
+      </div><div class="connection-row"><button class="button secondary small" id="testApiButton" type="button" data-action="test-api"><svg aria-hidden="true"><use href="#w-spark"/></svg>测试连接与看图能力</button><span class="muted tiny">留空可使用已保存的密钥</span></div><div id="apiTestResult" aria-live="polite"></div></fieldset>
+      <div id="settingsError" class="form-error" role="alert" hidden></div>
+      <div class="dialog-footer"><button class="button quiet" type="button" data-close="settingsDialog">取消</button><button class="button primary" id="saveSettingsButton" type="submit">保存设置<svg aria-hidden="true"><use href="#w-check"/></svg></button></div>
+    </form>
+  </dialog>
+  <dialog id="confirmDialog" class="dialog confirm-dialog" aria-labelledby="confirmTitle" aria-describedby="confirmBody">
+    <div class="dialog-header"><h2 id="confirmTitle">确认继续</h2><button class="icon-button" type="button" data-action="confirm-no" aria-label="取消"><svg aria-hidden="true"><use href="#w-close"/></svg></button></div>
+    <div id="confirmBody" class="confirm-body"></div><div class="dialog-footer"><button class="button secondary" type="button" data-action="confirm-no">返回检查</button><button class="button primary" id="confirmYes" type="button" data-action="confirm-yes">确认继续</button></div>
+  </dialog>
+  <dialog id="mediaDialog" class="dialog media-dialog" aria-labelledby="mediaTitle">
+    <div class="dialog-header media-header"><div><h2 id="mediaTitle">材料预览</h2><p id="mediaSubtitle" class="tiny muted"></p></div><button class="icon-button" type="button" data-close="mediaDialog" aria-label="关闭预览（Escape）" title="关闭预览（Escape）"><svg aria-hidden="true"><use href="#w-close"/></svg></button></div>
+    <div class="media-toolbar">
+      <div class="media-navigation"><button class="icon-button" id="mediaPrevious" type="button" data-action="media-previous" aria-label="上一份（←）" title="上一份（←）"><svg aria-hidden="true"><use href="#w-back"/></svg></button><span id="mediaCounter" class="tiny" aria-live="polite"></span><button class="icon-button" id="mediaNext" type="button" data-action="media-next" aria-label="下一份（→）" title="下一份（→）"><svg aria-hidden="true"><use href="#w-arrow"/></svg></button></div>
+      <label class="sr-only" for="mediaGroup">跳转采购</label><select id="mediaGroup" class="media-group" aria-label="跳转采购"></select>
+      <label class="sr-only" for="mediaKind">预览类型</label><select id="mediaKind" aria-label="预览类型"><option value="all">全部材料与成品</option><option value="original">原始材料</option><option value="voucher">购买及支付凭证</option><option value="invoice">发票打印版</option></select>
+      <div class="media-zoom-controls" aria-label="缩放预览"><button class="button quiet small" id="mediaFit" type="button" data-action="media-fit" title="适合窗口（0）"><svg aria-hidden="true"><use href="#w-fit"/></svg><span>适合窗口</span></button><button class="button quiet small" id="mediaOriginal" type="button" data-action="media-original" title="原尺寸（1）">原尺寸</button><button class="icon-button" id="mediaZoomOut" type="button" data-action="media-zoom-out" aria-label="缩小（−）"><svg aria-hidden="true"><use href="#w-minus"/></svg></button><output id="mediaZoomValue" aria-live="polite">100%</output><button class="icon-button" id="mediaZoomIn" type="button" data-action="media-zoom-in" aria-label="放大（+）"><svg aria-hidden="true"><use href="#w-plus"/></svg></button></div>
+      <span id="mediaDownload" hidden></span>
+    </div>
+    <div id="mediaStage" class="media-stage" tabindex="0" aria-label="预览画布，可滚动或拖动，左右方向键切换"></div>
+    <div id="mediaFilmstrip" class="media-filmstrip" aria-label="本批全部预览缩略条"></div>
+  </dialog>
+  <noscript><p class="noscript-note">请启用 JavaScript 后使用 ExpBot。本应用的材料与界面资源均保存在本机。</p></noscript>
+</body>
+</html>

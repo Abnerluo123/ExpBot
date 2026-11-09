@@ -1,0 +1,45 @@
+# Local runtime / secrets / user data
+data/
+output/
+*.log
+startup-error.txt
+.env
+.env.*
+*.dpapi
+
+# Build & release trees (attach binaries on GitHub Releases only)
+dist/
+desktop/*.exe
+desktop/*.exe.config
+ExpBot.exe
+SCNU*.exe
+简报.exe
+启动SCNU*.cmd
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# QA scratch / private samples / local diagnostics
+.qa*/
+.qa-*/
+artifacts/
+examples/
+assets/samples/
+.ole-diagnosis*
+*.local.json
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Inno / temp
+*.iss.bak
+scripts/*.tmp
